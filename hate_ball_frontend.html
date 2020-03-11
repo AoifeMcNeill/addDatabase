@@ -6,6 +6,10 @@
 
 		<script>
 			var req;
+			var output = "processing the questions...";
+			var question = req.query.question;
+			var question2 = req.query.question2;
+			console.log("The params: " + req.query.question + " " + req.query.question2);
 
 			function makeRequest() {
 				if (window.XMLHttpRequest) { 
