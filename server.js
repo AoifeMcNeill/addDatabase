@@ -2,6 +2,9 @@
 var express = require('express');
 var app = express();
 const PORT = process.env.PORT || 8080;
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://user1:<password>@cluster0-r2toa.mongodb.net/test?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
 
 //set the port based on environment (more on environments later)
 var port = PORT;
@@ -15,11 +18,14 @@ app.get('/', function(req,res){
 app.listen(PORT);
 console.log('Express Server is running at httpL//127.0.0.1:' .PORT);
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://user1:<password>@cluster0-r2toa.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
+});
+
+MongoClient.connect(uri, function (err, db) {
+  if(err) throw err;
+  //Write database Insert/Update/Query here..
+  console.log("End the database stuff");
 });
