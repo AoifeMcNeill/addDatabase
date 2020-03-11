@@ -1,0 +1,15 @@
+{
+    "name": "myfirstmongodb",
+    "version": "1.0.0",
+    "description": "my first mongo DB",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1" 
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AoifeMcNeill/addDatabase.git"
+    },
+    "author": "Aoife McNeill",
+    "license": "ISC"
+}
