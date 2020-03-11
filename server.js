@@ -11,12 +11,12 @@ var port = PORT;
 
 //send our index.html file to the user for the home page
 app.get('/', function(req,res){
-    res.sendFile(__dirname + '/index.html');
+    res.sendFile(__dirname + '/hate_ball_frontend.html');
 });
 
 //start the server
 app.listen(PORT);
-console.log('Express Server is running at httpL//127.0.0.1:' .PORT);
+console.log('Express Server is running at http://127.0.0.1:' .PORT);
 
 client.connect(err => {
   const collection = client.db("test").collection("devices");
